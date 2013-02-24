@@ -7,34 +7,34 @@ Make ECMAScript 3 runtime environment Compatible with some ECMAScript 5 practica
 
 ## Practical features extended:
 
-** Array.prototype.every**
+**Array.prototype.every**
 
-** Array.prototype.filter**
+**Array.prototype.filter**
 
-** Array.prototype.forEach**
+**Array.prototype.forEach**
 
-** Array.prototype.indexOf**
+**Array.prototype.indexOf**
 
-** Array.prototype.lastIndexOf**
+**Array.prototype.lastIndexOf**
 
-** Array.prototype.map**
+**Array.prototype.map**
 
-** Array.prototype.reduce**
+**Array.prototype.reduce**
 
-** Array.prototype.reduceRight**
+**Array.prototype.reduceRight**
 
-** Array.prototype.some**
+**Array.prototype.some**
 
-** Array.isArray**
+**Array.isArray**
 
-** Date.now**
+**Date.now**
 
-** Function.prototype.bind**
+**Function.prototype.bind**
 
-** Object.create**
+**Object.create**
 
-** Object.keys**
+**Object.keys**
 
-** String.prototype.trim**
+**String.prototype.trim**
 
 ## JSON is not included, [json3](https://github.com/bestiejs/json3) is the best!
