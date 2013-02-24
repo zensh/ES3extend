@@ -1,0 +1,23 @@
+{
+  "name": "ES3extend",
+  "version": "0.1.0",
+  "description": "make ECMAScript 3 runtime environment Compatible with some ECMAScript 5 practical features.",
+  "homepage": "https://github.com/zensh/ES3extend",
+  "main": "ES3extend",
+  "keywords": [
+    "ECMAScript 3",
+    "ECMAScript 5",
+    "Compatible"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://mths.be/mit"
+    }
+  ],
+  "author": {
+    "name": "zensh",
+    "email": "admin@zensh.com",
+    "url": "http://zensh.org/"
+  }
+}
