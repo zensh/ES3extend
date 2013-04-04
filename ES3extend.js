@@ -27,9 +27,9 @@
         // if ES5, return
     }
 
-    Array.prototype.every = Array.prototype.every || function (callback, obj) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.every = Array.prototype.every || function (fn, obj) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         if (obj && typeof obj !== 'object') {
             throw TypeError(obj + ' is not a object');
@@ -37,9 +37,9 @@
         var result;
         for (var i = 0, len = this.length; i < len; i++) {
             if (obj) {
-                result = callback.call(obj, this[i], i, this);
+                result = fn.call(obj, this[i], i, this);
             } else {
-                result = callback(this[i], i, this);
+                result = fn(this[i], i, this);
             }
             if (!result) {
                 return false;
@@ -48,9 +48,9 @@
         return true;
     };
 
-    Array.prototype.filter = Array.prototype.filter || function (callback, obj) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.filter = Array.prototype.filter || function (fn, obj) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         if (obj && typeof obj !== 'object') {
             throw TypeError(obj + ' is not a object');
@@ -58,9 +58,9 @@
         var result, array = [];
         for (var i = 0, len = this.length; i < len; i++) {
             if (obj) {
-                result = callback.call(obj, this[i], i, this);
+                result = fn.call(obj, this[i], i, this);
             } else {
-                result = callback(this[i], i, this);
+                result = fn(this[i], i, this);
             }
             if (result) {
                 array.push(this[i]);
@@ -69,9 +69,9 @@
         return array;
     };
 
-    Array.prototype.forEach = Array.prototype.forEach || function (callback, obj) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.forEach = Array.prototype.forEach || function (fn, obj) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         if (obj && typeof obj !== 'object') {
             throw TypeError(obj + ' is not a object');
@@ -81,9 +81,9 @@
                 continue;
             }
             if (obj) {
-                callback.call(obj, this[i], i, this);
+                fn.call(obj, this[i], i, this);
             } else {
-                callback(this[i], i, this);
+                fn(this[i], i, this);
             }
         }
     };
@@ -126,9 +126,9 @@
         return -1;
     };
 
-    Array.prototype.map = Array.prototype.map || function (callback, obj) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.map = Array.prototype.map || function (fn, obj) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         if (obj && typeof obj !== 'object') {
             throw TypeError(obj + ' is not a object');
@@ -136,17 +136,17 @@
         var array = [];
         for (var i = 0, len = this.length; i < len; i++) {
             if (obj) {
-                array[i] = callback.call(obj, this[i], i, this);
+                array[i] = fn.call(obj, this[i], i, this);
             } else {
-                array[i] = callback(this[i], i, this);
+                array[i] = fn(this[i], i, this);
             }
         }
         return array;
     };
 
-    Array.prototype.reduce = Array.prototype.reduce || function (callback, initial) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.reduce = Array.prototype.reduce || function (fn, initial) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         var result = initial,
             len = this.length;
@@ -155,7 +155,7 @@
                 return result;
             }
             for (var i = 0; i < len; i++) {
-                result = callback(result, this[i], i, this);
+                result = fn(result, this[i], i, this);
             }
         } else {
             if (len === 0) {
@@ -166,15 +166,15 @@
                 return result;
             }
             for (var i = 1; i < len; i++) {
-                result = callback(result, this[i], i, this);
+                result = fn(result, this[i], i, this);
             }
         }
         return result;
     };
 
-    Array.prototype.reduceRight = Array.prototype.reduceRight || function (callback, initial) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.reduceRight = Array.prototype.reduceRight || function (fn, initial) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         var result = initial,
             len = this.length;
@@ -183,7 +183,7 @@
                 return result;
             }
             for (var i = len - 1; i >= 0; i--) {
-                result = callback(result, this[i], i, this);
+                result = fn(result, this[i], i, this);
             }
         } else {
             if (len === 0) {
@@ -194,15 +194,15 @@
                 return result;
             }
             for (var i = len - 2; i >= 0; i--) {
-                result = callback(result, this[i], i, this);
+                result = fn(result, this[i], i, this);
             }
         }
         return result;
     };
 
-    Array.prototype.some = Array.prototype.some || function (callback, obj) {
-        if (typeof callback !== 'function') {
-            throw TypeError(callback + ' is not a function');
+    Array.prototype.some = Array.prototype.some || function (fn, obj) {
+        if (typeof fn !== 'function') {
+            throw TypeError(fn + ' is not a function');
         }
         if (obj && typeof obj !== 'object') {
             throw TypeError(obj + ' is not a object');
@@ -210,9 +210,9 @@
         var result;
         for (var i = 0, len = this.length; i < len; i++) {
             if (obj) {
-                result = callback.call(obj, this[i], i, this);
+                result = fn.call(obj, this[i], i, this);
             } else {
-                result = callback(this[i], i, this);
+                result = fn(this[i], i, this);
             }
             if (result) {
                 return true;
